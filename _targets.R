@@ -21,19 +21,9 @@ source(here::here("R", "functions.R"))
 
 list(
   
-  ## Manage data ----
+  ## Load data ----
   
-  tar_target(data_resume_visits,get_resume_visits("data_raw/obs_ABPOLL.txt")),
-
-  tar_target(data_id,load_data_id("data_raw/data_ABPOLL_ID_resume.txt", data_resume_visits, cols = "co10")),
-
-  tar_target(data_genotypes,load_data("data_raw/fix10_paternities_ABPOLL.txt")),
-
-  tar_target(data_previous_study,load_data("data_raw/all_data_long_NA_0AllFemFALSE_raw.txt")),
-
-  tar_target(data_from_genotypes,get_data_from_genotypes(data_genotypes, data_id, "data_raw/data_ABPOLL_ID_level_detID.txt", cols="co10")),
-
-  tar_target(data_sem_sampled_sessions,get_data_sem_sampled_sessions(data_id, data_previous_study, data_from_genotypes, cols="co10")),
+  tar_target(data_sem_sampled_sessions,load_data("data/data_path_analysis_manuscript.txt")),
   
   ## Effect on the measured variables ----
   
@@ -81,15 +71,15 @@ list(
   ## Females
   
   tar_target(piecewise_females_low_combi1_wtot_basic,get_piecewise_females_visits(data_sem_sampled_sessions, target_ttt = "low", target_sex = "fem",
-                                                                             target_sr = "W", target_ps = "ME",
+                                                                             target_sr = "W", target_ps = "PB",
                                                                              target_traits = c("F","H"))),
   
   tar_target(piecewise_females_medium_combi1_wtot_basic,get_piecewise_females_visits(data_sem_sampled_sessions, target_ttt = "medium", target_sex = "fem",
-                                                                                target_sr = "W", target_ps = "ME",
+                                                                                target_sr = "W", target_ps = "PB",
                                                                                 target_traits = c("F","H"))),
   
   tar_target(piecewise_females_high_combi1_wtot_basic,get_piecewise_females_visits(data_sem_sampled_sessions, target_ttt = "high", target_sex = "fem",
-                                                                              target_sr = "W", target_ps = "ME",
+                                                                              target_sr = "W", target_ps = "PB",
                                                                               target_traits = c("F","H"))),
   
   ## Final SEM models with missing paths inclusion detected with dsep ----
