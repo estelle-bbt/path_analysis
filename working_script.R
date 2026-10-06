@@ -28,8 +28,13 @@ targets::tar_load(piecewise_males_high_combi1_wtot_final)
 
 ### Females ----
 targets::tar_load(piecewise_females_low_combi1_wtot_final)
+targets::tar_load(piecewise_females_low_combi1_wtot_final_out)
+targets::tar_load(piecewise_females_low_combi1_wtot_final_self)
 targets::tar_load(piecewise_females_medium_combi1_wtot_final)
 targets::tar_load(piecewise_females_high_combi1_wtot_final)
+
+## Pooling treatment (reviewers comments) ----
+targets::tar_load(piecewise_pooled_ttt_males)
 
 ## Result robustness using the different combination of floral traits ----
 
@@ -93,4 +98,7 @@ targets::tar_read(piecewise_females_complete_low_combi1_wtot_final)$coefs
 targets::tar_read(piecewise_females_complete_medium_combi1_wtot_final)$coefs
 targets::tar_read(piecewise_females_complete_high_combi1_wtot_final)$coefs
 
-## To do : add Z-tests and everything in the supplementary information files ----
+## Z-tests
+
+z_tests_file <- targets::tar_read(z_tests)$inter_sex
+flextable::save_as_docx(flextable::flextable(z_tests_file),path="z_tests.docx")

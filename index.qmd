@@ -41,6 +41,7 @@ WARNING !!!!!!!!! oms (both at the flower or the id scale) is encoded as followi
 # Treatment effect on variables at the id level
 
 ## sr_all mal
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(sr_all_mal)
 
@@ -50,6 +51,7 @@ sr_all_mal$tukey
 ```
 
 ## sr_all fem
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(sr_all_fem)
 
@@ -60,6 +62,7 @@ sr_all_fem$plot
 ```
 
 ## sr_out mal
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(sr_out_mal)
 
@@ -69,6 +72,7 @@ sr_out_mal$tukey
 ```
 
 ## sr_out fem
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(sr_out_fem)
 
@@ -79,6 +83,7 @@ sr_out_fem$plot
 ```
 
 ## oms mal
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(oms_mal)
 
@@ -88,6 +93,7 @@ oms_mal$tukey
 ```
 
 ## oms fem
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(oms_fem)
 
@@ -98,6 +104,7 @@ oms_fem$plot
 ```
 
 ## mean_ps mal
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(mean_ps_mal)
 
@@ -108,6 +115,7 @@ mean_ps_mal$plot
 ```
 
 ## diff_q fem
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(diff_q_fem)
 
@@ -118,6 +126,7 @@ diff_q_fem$plot
 ```
 
 ## contid (pla)
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(contid_id)
 
@@ -128,6 +137,7 @@ contid_id$plot
 ```
 
 ## meanpos
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(meanpos_id)
 
@@ -138,6 +148,7 @@ meanpos_id$plot
 ```
 
 ## visflo
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(visflo_id)
 
@@ -148,6 +159,7 @@ visflo_id$plot
 ```
 
 ## flo
+
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 targets::tar_load(flo_id)
 
@@ -155,16 +167,6 @@ flo_id$summary
 flo_id$lrt
 flo_id$tukey
 flo_id$plot
-```
-# MANOVA
-
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
-targets::tar_load(data_id)
-
-data_id |>
-  group_by(ttt) |>
-  summarise(mean_flower = mean(nb_flo_open, na.rm = T),
-            sd_dlower = sd(nb_flo_open, na.rm = T))
 ```
 
 # Basic SEMs
