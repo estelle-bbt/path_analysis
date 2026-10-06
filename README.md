@@ -1,10 +1,6 @@
 # Sexual selection on floral traits
 
-The aim of this project is to better understand how floral traits shapes
-sexual selection according to pollinator abundance with path analyses, using the model  
-species *Brassica rapa* and its main pollinator *Bombus terrestris*.
-
-The objectives:
+The aim of this project is to better understand how floral traits shapes sexual selection according to pollinator abundance with path analyses, using the model species *Brassica rapa* and its main pollinator *Bombus terrestris*.
 
 
 ## Content
