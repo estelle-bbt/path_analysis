@@ -23,16 +23,16 @@ list(
   
   ## Manage data ----
   
-  tar_target(data_resume_visits,get_resume_visits("data/obs_ABPOLL.txt")),
-  
-  tar_target(data_id,load_data_id("data/data_ABPOLL_ID_resume.txt", data_resume_visits, cols = "co10")),
-  
-  tar_target(data_genotypes,load_data("data/fix10_paternities_ABPOLL.txt")),
-  
-  tar_target(data_previous_study,load_data("data/all_data_long_NA_0AllFemFALSE_raw.txt")),
-  
-  tar_target(data_from_genotypes,get_data_from_genotypes(data_genotypes, data_id, "data/data_ABPOLL_ID_level_detID.txt", cols="co10")),
-  
+  tar_target(data_resume_visits,get_resume_visits("data_raw/obs_ABPOLL.txt")),
+
+  tar_target(data_id,load_data_id("data_raw/data_ABPOLL_ID_resume.txt", data_resume_visits, cols = "co10")),
+
+  tar_target(data_genotypes,load_data("data_raw/fix10_paternities_ABPOLL.txt")),
+
+  tar_target(data_previous_study,load_data("data_raw/all_data_long_NA_0AllFemFALSE_raw.txt")),
+
+  tar_target(data_from_genotypes,get_data_from_genotypes(data_genotypes, data_id, "data_raw/data_ABPOLL_ID_level_detID.txt", cols="co10")),
+
   tar_target(data_sem_sampled_sessions,get_data_sem_sampled_sessions(data_id, data_previous_study, data_from_genotypes, cols="co10")),
   
   ## Effect on the measured variables ----

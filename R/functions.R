@@ -531,7 +531,6 @@ get_data_sem_sampled_sessions <- function(data_id, data_previous_study, data_fro
            F = r_nb_flo_open,
            H = r_height_mean,
            POS = r_mean_position,
-           POSf = r_mean_first_visit,
            PLA = r_contact_id,
            DUR = r_dur_per_visit,
            VIS = r_nb_visits_per_flower,
@@ -539,6 +538,26 @@ get_data_sem_sampled_sessions <- function(data_id, data_previous_study, data_fro
   
   return(data_sem)
 }
+
+#' Data summary for plots - effect of ttt on variables
+#'
+#' @description 
+#'
+#' @param file 
+#'
+#' @return Results
+#' 
+#' @import dplyr
+#' 
+#' @export
+
+data_summary_plot <- function(x) {
+  m <- mean(x)
+  ymin <- m-sd(x)
+  ymax <- m+sd(x)
+  return(c(y=m,ymin=ymin,ymax=ymax))
+}
+
 
 #' Get ttt effect on variables at the id level
 #'
